@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Köroğlu Öyküleri</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
+
+</head>
+<body>    
+    </div>
+    <div id="filtreler">
+        <select id="haftaSec" onchange="haftaSec()">
+            <option value="tum">Hafta Seç</option>
+        </select>
+        <select id="yazarSec" onchange="yazarSec()">
+            <option value="tum">Yazar Seç</option>
+        </select>
+    </div>
+    <div id="container">
+        <table id="KitapListesi"> 
+            <tr>
+                <th>Başlık</th>
+                <th>Yazar</th>
+                <th>Link</th>
+                <th>Hafta</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
