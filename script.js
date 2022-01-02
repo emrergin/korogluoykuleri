@@ -58,7 +58,6 @@ oykulerinTamami=[
     ["Hafta 2","Derya Kuru","İnce Çizgi","https://docs.google.com/document/d/132KrpXh2F-SM8iU5mpSRdvX1lPldsqeqvw9t-I3-gU4/edit?usp=drivesdk"],
     ["Hafta 2","Ayşenur Deniz","Davul","https://docs.google.com/document/d/1ufPWGv4c7b0ZawXrGYC1dScG-JYdU7XhYn1g7AaWoMI/edit?usp=sharing"],
     ["Hafta 2","Sena Dilber","Ben Bilmem","https://docs.google.com/document/d/1jqUsVlxbdxv10y8fP7LYo8_b5ddOSr5n0pUs5YFDDp8/edit?usp=sharing"],
-    ["Hafta 2","Ahmet Hakan Karataş","Duvar Saati","https://docs.google.com/document/d/1i5_OsvqHcaqWDrDtG6-Lp2wTOgmy5IE7rA6PxKNzVZQ/edit?usp=sharing"],
     ["Hafta 2","Mehmet Faruk Kurt","İstendiğinde Gelen","https://docs.google.com/document/d/15aa4UKn5p4_gtE06KJ_XK8Vl3Ri-_aMjDuh3uWPU9Eg/edit"],
     ["Hafta 2","Muhammed Yasir Okumuş","Öte Taraf","https://docs.google.com/document/d/104o83M04hWvnFZ9rflbpE4PK1aqrWlHgVLvPd5KxuQI/edit"],
     ["Hafta 2","Kuş Tüyü","Dedem Ve Ramazan","https://docs.google.com/document/d/1Rs9MBWmZ6AdJFP3tnIgdx8P8IqT6h7q-_PMqydLbFGU/edit?usp=drivesdk"],
@@ -1060,7 +1059,7 @@ function dropDownOlustur(){
     }
 
     uHaftaList=[...new Set(haftaList)];
-    uYazarList=[...new Set(yazarList)];
+    uYazarList=[...new Set(yazarList)].sort();
 
     for (let i = 0; i < uHaftaList.length; i++) {
         let hel= document.createElement("option");
