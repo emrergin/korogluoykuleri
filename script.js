@@ -993,12 +993,10 @@ const listem=document.getElementById(`KitapListesi`);
 const weekselect = document.getElementById("haftaSec");
 const autselect = document.getElementById("yazarSec");
 const basHTML=listem.innerHTML;
-// Kutuphanem=oykulerinTamami;
 
 
-function oykuEkle(title, author, hafta, link,endeks){
-    Kutuphanem.push(new Oyku(title, author, hafta, link,endeks));
-    // TabloYaz(Kutuphanem);
+function oykuEkle(title, author, hafta, link){
+    Kutuphanem.push(new Oyku(title, author, hafta, link));
 }
 
 function TabloYaz(Tablo){
@@ -1009,22 +1007,19 @@ function TabloYaz(Tablo){
 }
 
 class Oyku{
-    constructor(title, author, hafta, link,endeks){
+    constructor(title, author, hafta, link){
         this.title = title;
         this.author = author;
         this.hafta = hafta;
         this.link = link;
-        this.indeks=endeks;
     }
 
-    tabloYaz(endeks){
+    tabloYaz(){
         let satir= document.createElement('tr');
         let baslik= document.createElement('td');
         let yazar= document.createElement('td');
         let linkKutusu= document.createElement('td');
         let hafta= document.createElement('td');
-        // let puan= document.createElement('td');
-        // let dugme= document.createElement('td');
 
 
         baslik.textContent=this.title;
@@ -1042,7 +1037,6 @@ class Oyku{
         hafta.textContent=this.hafta;
         satir.appendChild(hafta);
         
-        satir.setAttribute(`data-endeks`,endeks);
         return satir;
     }
 
@@ -1085,15 +1079,12 @@ function dropDownOlustur(){
 function haftaSec(){
     let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
     (autselect.value==="tum" || oyku.author === autselect.value));
-    // && oyku.author === autselect.value
     TabloYaz(altTablo);
 }
 
 function yazarSec(){
     let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
     (autselect.value==="tum" || oyku.author === autselect.value));
-    // let altTablo = Kutuphanem.filter(oyku => oyku.author === autselect.value && oyku.hafta === `Hafta `+weekselect.value);
-    // && oyku.hafta === `Hafta `+weekselect.value
     TabloYaz(altTablo);  
 }
 
