@@ -43,9 +43,11 @@ class Oyku{
         hafta.textContent=this.hafta;
         satir.appendChild(hafta);
         
-        if (this.hafta.slice(6)%2===0){
-            satir.classList.add(`ciftler`);
-        }
+        // satir.setAttribute(`data-satir`, this.endeks);
+        // if (this.endeks>1 && Kutuphanem[this.endeks-1].hafta!==this.hafta){
+        //     // satir.style.cssText=`padding: 40px;`;
+        //     satir.innerHTML+="<tr></tr>"
+        // }
         return satir;
     }
 }
