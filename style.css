@@ -79,3 +79,8 @@ a:visited{
 .yazarKutusu,.haftaKutusu, #haftaBaslik{
     cursor: pointer;
 }
+
+#haftaBaslik:hover{
+    background-color: #21895C;
+    transition-duration: 0.35s;
+}
