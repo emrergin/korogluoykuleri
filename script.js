@@ -998,7 +998,7 @@ const basHTML=listem.innerHTML;
 
 function oykuEkle(title, author, hafta, link,endeks){
     Kutuphanem.push(new Oyku(title, author, hafta, link,endeks));
-    TabloYaz(Kutuphanem);
+    // TabloYaz(Kutuphanem);
 }
 
 function TabloYaz(Tablo){
@@ -1054,7 +1054,7 @@ class Oyku{
 for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
 }
-// TabloYaz(Kutuphanem);
+TabloYaz(Kutuphanem);
 
 function dropDownOlustur(){
     haftaList=[];
