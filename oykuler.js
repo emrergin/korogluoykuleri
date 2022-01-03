@@ -40,7 +40,7 @@ oykulerinTamami=[
     ["Hafta 1","Elif Aytekin","Gelinlik","https://docs.google.com/document/d/1vKJjTRSEM-lxXToaIr8FMSC19xKwVbH_Kcfztc_uY4o/edit?usp=sharing"],
     ["Hafta 1","Osman Adalı","Karanlığın Emzirdiği","https://docs.google.com/document/d/1sbDZwpwyPb5OlSh-8QJuCjWEG2T9BHQeQqYuUmFVoaQ/edit?usp=sharing"],
     ["Hafta 1","Hacer Ulusoy","Tiryaki","https://docs.google.com/document/d/1vGN7PcMcFf659rNX8tBioJ7RDIrecKDxrsCBwsFJkf8/edit?usp=sharing"],
-    ["Hafta 1","Eylül Güzelay","Bir Tutam Afyon Sarhoşluğ","https://docs.google.com/document/d/1hE6qYCvcroNXSYseqci6USwZfvw-x2Y2gNSCu9yFEfk/edit?usp=sharing"],
+    ["Hafta 1","Eylül Güzelay","Bir Tutam Afyon Sarhoşluğu","https://docs.google.com/document/d/1hE6qYCvcroNXSYseqci6USwZfvw-x2Y2gNSCu9yFEfk/edit?usp=sharing"],
     ["Hafta 1","Yasemin Horzum","Başlıksız","https://docs.google.com/document/d/1R2NEkdpse4qi9LMdPspIqofKxoaiPcTCiIj4C9oolLU/edit"],
     ["Hafta 2","Makbule Öztürk","Sıcak Pide","https://docs.google.com/document/d/1JhCdgPO3-TmQZdB0MzlIQAoIzYR_F8Hi4FTpNpysNQ0/edit?usp=sharing"],
     ["Hafta 2","Büşra Yücedağ","Vazgeçmek İçin Erken","https://docs.google.com/document/d/1IkdyQNiNkK_02udCVrG-q6I_sSZ-SWCc3TOU7yf8Mvs/edit?usp=sharing"],

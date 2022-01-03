@@ -36,6 +36,7 @@ table td{
     padding: 1vw;
 }
 
+
 table th{
     padding: 1vw;
     background-color: #2c2c2c;
@@ -51,9 +52,11 @@ table th:last-child{
     border-radius: 0 2vw 0 0;
 }
 
-.ciftler{
+/* .ciftler */
+tr:nth-child(even){
     background-color: rgb(240,240,240);
 }
+
 
 #container{
     display:flex;
@@ -64,4 +67,7 @@ table th:last-child{
     margin: 4vh 0px 1vh 0px;
 }
 
-
+tr:hover, tr:hover a{
+    color: #21895C;
+    transition-duration: 0.35s;
+}
