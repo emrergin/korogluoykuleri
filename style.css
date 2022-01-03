@@ -2,14 +2,18 @@
     box-sizing: border-box;
 }
 
-body{
+html,body{
     margin:0px;
+    width: 100vw;
+    /* display: flex;
+    flex-direction: column; */
 }
 
 
 #filtreler{
-    text-align: center;
-    margin: 5vh;
+    text-align: center;    
+    /* margin:0px; */
+    margin: 5vh 0px;
 }
 
 select{
@@ -59,7 +63,7 @@ tr:nth-child(even) {
     flex-direction: column;
     justify-content: center;
     width: 100vw;
-    margin-top: 3vh;
+    margin: 3vh 0px 1vh 0px;
 }
 
 
