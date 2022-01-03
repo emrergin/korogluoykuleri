@@ -3,6 +3,7 @@ const listem=document.getElementById(`KitapListesi`);
 const weekselect = document.getElementById("haftaSec");
 const autselect = document.getElementById("yazarSec");
 const basHTML=listem.innerHTML;
+// document.getElementById(`haftaBaslik`).addEventListener('click',siralamaDegistir);
 
 
 function oykuEkle(title, author, hafta, link){
@@ -119,6 +120,24 @@ function haftaSec2(e){
     weekselect.value=e.target.textContent.slice(6);
     autselect.value="tum";
     haftaSec();
+}
+
+let deg=1;
+function siralamaDegistir(){
+    Kutuphanem.sort(haftaSiraFonksiyonu);
+    // console.log(`aaa`);
+    
+    function haftaSiraFonksiyonu(a, b) {
+        return (a.hafta.slice(6) - b.hafta.slice(6))*-deg;
+    }
+    haftaSec();
+    deg=-deg;
+    if (deg===1){
+        document.getElementById(`haftaBaslik`).textContent="Hafta ▼"
+    }
+    else{
+        document.getElementById(`haftaBaslik`).textContent="Hafta ▲"
+    }    
 }
 
 dropDownOlustur();

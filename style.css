@@ -76,6 +76,6 @@ a:visited{
     color:blue;
 }
 
-.yazarKutusu,.haftaKutusu{
+.yazarKutusu,.haftaKutusu, #haftaBaslik{
     cursor: pointer;
 }
