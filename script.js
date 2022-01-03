@@ -15,6 +15,13 @@ function TabloYaz(Tablo){
         listem.appendChild(Tablo[i].tabloYaz(i));
     }
     document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Tablo.length;
+
+    document.querySelectorAll(`.yazarKutusu`).forEach((yazar) => {
+        yazar.addEventListener('click', yazarSec2);
+    });
+    document.querySelectorAll(`.haftaKutusu`).forEach((haff) => {
+        haff.addEventListener('click', haftaSec2);
+    });
 }
 
 class Oyku{
@@ -34,13 +41,18 @@ class Oyku{
         let link=document.createElement(`a`);
         link.textContent=this.title;
         link.setAttribute(`href`,this.link);
+        link.setAttribute(`target`,`_blank`);
         baslik.appendChild(link);
         satir.appendChild(baslik);
 
         yazar.textContent=this.author;
+        // yazar.setAttribute(`clas`,`yazarKutusu`);
+        yazar.classList.add(`yazarKutusu`);
         satir.appendChild(yazar);
 
         hafta.textContent=this.hafta;
+        // hafta.setAttribute(`id`,`haftaKutusu`);
+        hafta.classList.add(`haftaKutusu`);
         satir.appendChild(hafta);
         
         // satir.setAttribute(`data-satir`, this.endeks);
@@ -51,6 +63,8 @@ class Oyku{
         return satir;
     }
 }
+
+
 
 for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
@@ -93,6 +107,18 @@ function yazarSec(){
     let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
     (autselect.value==="tum" || oyku.author === autselect.value));
     TabloYaz(altTablo);  
+}
+
+function yazarSec2(e){
+    autselect.value=e.target.textContent;
+    weekselect.value="tum";
+    yazarSec();
+}
+
+function haftaSec2(e){
+    weekselect.value=e.target.textContent.slice(6);
+    autselect.value="tum";
+    haftaSec();
 }
 
 dropDownOlustur();

@@ -71,3 +71,11 @@ tr:hover, tr:hover a{
     color: #21895C;
     transition-duration: 0.35s;
 }
+
+a:visited{
+    color:blue;
+}
+
+.yazarKutusu,.haftaKutusu{
+    cursor: pointer;
+}
