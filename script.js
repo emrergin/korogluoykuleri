@@ -142,6 +142,7 @@ function rassalSec()
 }
 
 
+
 function siralamaDegistir(){
     Kutuphanem.sort(haftaSiraFonksiyonu);
     
@@ -162,5 +163,6 @@ function siralamaDegistir(){
 for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
 }
+
 TabloYaz(Kutuphanem);
 dropDownOlustur();
