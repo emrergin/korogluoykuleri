@@ -161,7 +161,7 @@ oykulerinTamami=[
     ["Hafta 5","Gözde Yılmaz","Eflet","https://docs.google.com/document/d/12X-qKt_FSqRoODyddzwZg7IhIJv-WiiluNSyQWRqm7Y/edit"],
     ["Hafta 5","Elif Ezgi Bektaş","Bize Canavarın Hikâyesini Anlat","https://docs.google.com/document/d/1OYNFDZPycmnHeLoJ3jhpbsh8fU-ujeuRM6h44mqmXZk/edit"],
     ["Hafta 5","Melike Sülev Aydın","Son Tercih","https://docs.google.com/document/d/1XQdKyO9PynjkGK39yRQL-DxCt8kYIwIseqErI07Rszc/edit"],
-    ["Hafta 5","İrem Erten","Sevimli Patiler Kliniği’nin Yeni Çırağı -","https://docs.google.com/document/d/1PpeqPmGENl7K-LXsYpl4hvYv25T6ajoVHT-E1oxaV9k/edit?usp=drivesdk"],
+    ["Hafta 5","İrem Erten","Sevimli Patiler Kliniği’nin Yeni Çırağı","https://docs.google.com/document/d/1PpeqPmGENl7K-LXsYpl4hvYv25T6ajoVHT-E1oxaV9k/edit?usp=drivesdk"],
     ["Hafta 5","Emine Genç","Er Ya Da Geç","https://docs.google.com/document/d/1NQ6WMhAhhLTlBm6mvK7nAMuJvKVzvpOoFflHHWT3Ju4/edit"],
     ["Hafta 5","Emine Ecran Çeliksu","Günlerden Bir Gün","https://docs.google.com/document/d/1UzHAT8keC77igYkjsBAMLSUyYORvL8ThjXk5-flC_LE/edit"],
     ["Hafta 5","Sevda Turan","İtiraf","https://docs.google.com/document/d/1x5aU_wSZqEWY0kz6bA49EFNXljQkqOeDZ-IjE9QgrRI/edit"],
