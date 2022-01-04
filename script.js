@@ -141,6 +141,11 @@ function rassalSec()
     TabloYaz(altTablo);  
 }
 
+function hepsiSec(){
+    weekselect.value=`tum`;
+    autselect.value=`tum`;
+    TabloYaz(Kutuphanem);
+}
 
 
 function siralamaDegistir(){
