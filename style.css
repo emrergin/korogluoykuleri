@@ -34,10 +34,11 @@ table{
     margin:0px;
     border-radius: 2vw;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    border-spacing: 0px 2px;
 }
 
 table td{
-    border:1px solid #666;
+    /* border:1px solid #666; */
     padding: 1vw;
 }
 
