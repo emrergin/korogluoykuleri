@@ -3,6 +3,7 @@ const listem=document.getElementById(`KitapListesi`);
 const weekselect = document.getElementById("haftaSec");
 const autselect = document.getElementById("yazarSec");
 const basHTML=listem.innerHTML;
+let renkArray=[];
 // document.getElementById(`haftaBaslik`).addEventListener('click',siralamaDegistir);
 
 
@@ -25,12 +26,18 @@ function TabloYaz(Tablo){
     });
 }
 
+const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
+
 class Oyku{
     constructor(title, author, hafta, link){
         this.title = title;
         this.author = author;
         this.hafta = hafta;
         this.link = link;
+        if (renkArray[this.hafta.slice(6)]===undefined){
+            renkArray[this.hafta.slice(6)]=`rgb(${randomBetween(220,255)},${randomBetween(220,255)},${randomBetween(220,255)})`;
+        }
+        this.renk=renkArray[this.hafta.slice(6)];
     }
 
     tabloYaz(){
@@ -61,6 +68,7 @@ class Oyku{
         //     // satir.style.cssText=`padding: 40px;`;
         //     satir.innerHTML+="<tr></tr>"
         // }
+        satir.style.backgroundColor = this.renk;
         return satir;
     }
 }
@@ -81,7 +89,9 @@ function dropDownOlustur(){
     }
 
     uHaftaList=[...new Set(haftaList)];
-    uYazarList=[...new Set(yazarList)].sort();
+    uYazarList=[...new Set(yazarList)].sort(function (a, b) {
+            return a.localeCompare(b);
+          });
 
     for (let i = 0; i < uHaftaList.length; i++) {
         let hel= document.createElement("option");
