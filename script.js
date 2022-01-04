@@ -4,7 +4,7 @@ const weekselect = document.getElementById("haftaSec");
 const autselect = document.getElementById("yazarSec");
 const basHTML=listem.innerHTML;
 let renkArray=[];
-// document.getElementById(`haftaBaslik`).addEventListener('click',siralamaDegistir);
+let deg=1;
 
 
 function oykuEkle(title, author, hafta, link){
@@ -75,10 +75,7 @@ class Oyku{
 
 
 
-for (let i = 0; i < oykulerinTamami.length; i++) {
-    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
-}
-TabloYaz(Kutuphanem);
+
 
 function dropDownOlustur(){
     haftaList=[];
@@ -106,6 +103,7 @@ function dropDownOlustur(){
         yel.value=uYazarList[i];
         autselect.appendChild(yel);
     }
+    return {uHaftaList,uYazarList};
 }
 
 function haftaSec(){
@@ -132,10 +130,20 @@ function haftaSec2(e){
     haftaSec();
 }
 
-let deg=1;
+function rassalSec()
+{
+    let altTablo=[];
+    let rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
+
+    altTablo.push(rassaloyku);
+    autselect.value=rassaloyku.author;
+    weekselect.value=rassaloyku.hafta.slice(6);
+    TabloYaz(altTablo);  
+}
+
+
 function siralamaDegistir(){
     Kutuphanem.sort(haftaSiraFonksiyonu);
-    // console.log(`aaa`);
     
     function haftaSiraFonksiyonu(a, b) {
         return (a.hafta.slice(6) - b.hafta.slice(6))*-deg;
@@ -150,4 +158,9 @@ function siralamaDegistir(){
     }    
 }
 
+
+for (let i = 0; i < oykulerinTamami.length; i++) {
+    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
+}
+TabloYaz(Kutuphanem);
 dropDownOlustur();
