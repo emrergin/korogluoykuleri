@@ -54,20 +54,13 @@ class Oyku{
         satir.appendChild(baslik);
 
         yazar.textContent=this.author;
-        // yazar.setAttribute(`clas`,`yazarKutusu`);
         yazar.classList.add(`yazarKutusu`);
         satir.appendChild(yazar);
 
         hafta.textContent=this.hafta;
-        // hafta.setAttribute(`id`,`haftaKutusu`);
         hafta.classList.add(`haftaKutusu`);
         satir.appendChild(hafta);
         
-        // satir.setAttribute(`data-satir`, this.endeks);
-        // if (this.endeks>1 && Kutuphanem[this.endeks-1].hafta!==this.hafta){
-        //     // satir.style.cssText=`padding: 40px;`;
-        //     satir.innerHTML+="<tr></tr>"
-        // }
         satir.style.backgroundColor = this.renk;
         return satir;
     }

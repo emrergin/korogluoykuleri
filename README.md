@@ -15,4 +15,4 @@ I thank Hacer Noğman, a student of mine from the workshop, for constant suggest
 - There might be big performance costs, even with small projects like this, if a function is used inside a loop mistakenly.
 
 ### Sources
-= Favicon: https://pixabay.com/images/id-2022464/
+- Favicon: https://pixabay.com/images/id-2022464/
