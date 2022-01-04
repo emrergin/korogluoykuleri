@@ -969,7 +969,7 @@ oykulerinTamami=[
     ["Hafta 66","Fatma Ünsal","Küçücük Yorgunluk","https://docs.google.com/document/d/1Hx2MEbbhlASmoAtKI_k_ASrs5kyr2FLgd7i8TOHJkqo/edit?usp=sharing"],
     ["Hafta 66","Tuğçe Asiye Ballı","Gerçek Hayat","https://docs.google.com/document/d/1CP-GikPSfp42NzC-Mf8G3sYWCJn-sRufvkbTteVwwKo/edit?usp=sharing"],
     ["Hafta 66","Hacer Noğman","Gökten Topladım","https://docs.google.com/document/d/1Sv8bQNByqSwuMA-AtTT-iT4zpnKcgRAKlFCCjZio6tE/edit?usp=sharing"],
-    ["Hafta 67","Ayşenur Önler","Gün Günden Odamın Şeklini ALıyorum","https://docs.google.com/document/d/1WQPSv4xfkE8OAPvjB__PIDX4VP7Qgr9MYJv5hFdF--A/edit?usp=sharing"],
+    ["Hafta 67","Ayşenur Önler","Gün Günden Odamın Şeklini Alıyorum","https://docs.google.com/document/d/1WQPSv4xfkE8OAPvjB__PIDX4VP7Qgr9MYJv5hFdF--A/edit?usp=sharing"],
     ["Hafta 67","Emine Ecran Çeliksu","Çorbamdan Kul Çıktı","https://docs.google.com/document/d/1QcIVOm-YuM-r_n5dnv_UpzQloNfcDxKioYMEeJynXk0/edit"],
     ["Hafta 67","Fatma Ünsal","Olsun Redifli Hikaye","https://docs.google.com/document/d/14EIKZBa6iEcF6zJruypMVhtVGVxHs6_mnbMSAnBV3X8/edit?usp=sharing"],
     ["Hafta 67","Yakup Karahan","142. veya 143. Gün ya da Ne Fark Eder?","https://docs.google.com/document/d/1lW3eD9KXLGhuae_aPaYC1nUVzhRZZ4kaz8rOhwwwecs/edit?usp=drivesdk"],
