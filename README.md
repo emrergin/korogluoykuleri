@@ -2,7 +2,7 @@
 
 This project of mine is just a fancy user interface for all the stories that were written in the online (free) story workshop I hosted for 16 months, between April 2020-August 2021. Details of this workshop can be found [here](https://emrergin.github.io/zettel/k%C3%B6ro%C4%9Flu-%C3%B6yk%C3%BC-at%C3%B6lyesi.html) (in Turkish). The website does not do anything a properly set Google Sheets could not, but I still like to have things this way.
 
-It uses a similar logic with and many code refactors from my Bookshelf Project, https://github.com/emrergin/kutuphane.
+It uses a similar logic with and many code refactors from my [Bookshelf Project](https://github.com/emrergin/kutuphane).
 
 I thank Hacer Noğman, a student of mine from the workshop, for constant suggestions and bug testing.
 
