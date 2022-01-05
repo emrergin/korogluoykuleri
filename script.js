@@ -11,20 +11,24 @@ function oykuEkle(title, author, hafta, link){
     Kutuphanem.push(new Oyku(title, author, hafta, link));
 }
 
-function TabloYaz(Tablo){
-    listem.innerHTML=basHTML;
-    for (let i = 0; i < Tablo.length; i++) {
-        listem.appendChild(Tablo[i].tabloYaz(i));
-    }
-    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Tablo.length;
+// function TabloYaz(Tablo){
+//     listem.innerHTML=basHTML;
+//     for (let i = 0; i < Tablo.length; i++) {
+//         listem.appendChild(Tablo[i].tabloYaz(i));
+//     }
+//     document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Tablo.length;
 
-    document.querySelectorAll(`.yazarKutusu`).forEach((yazar) => {
-        yazar.addEventListener('click', yazarSec2);
-    });
-    document.querySelectorAll(`.haftaKutusu`).forEach((haff) => {
-        haff.addEventListener('click', haftaSec2);
-    });
-}
+//     document.querySelectorAll(`.yazarKutusu`).forEach((yazar) => {
+//         yazar.addEventListener('click', yazarSec2);
+//     });
+//     document.querySelectorAll(`.haftaKutusu`).forEach((haff) => {
+//         haff.addEventListener('click', haftaSec2);
+//     });
+// }
+
+// function TabloYaz2()
+
+
 
 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
@@ -38,6 +42,8 @@ class Oyku{
             renkArray[this.hafta.slice(6)]=`rgb(${randomBetween(220,255)},${randomBetween(220,255)},${randomBetween(220,255)})`;
         }
         this.renk=renkArray[this.hafta.slice(6)];
+        this.veriSatiri=this.tabloYaz();
+        this.included=true;
     }
 
     tabloYaz(){
@@ -55,20 +61,18 @@ class Oyku{
 
         yazar.textContent=this.author;
         yazar.classList.add(`yazarKutusu`);
+        yazar.addEventListener('click', yazarSec2);
         satir.appendChild(yazar);
 
         hafta.textContent=this.hafta;
         hafta.classList.add(`haftaKutusu`);
+        hafta.addEventListener('click', haftaSec2);
         satir.appendChild(hafta);
         
         satir.style.backgroundColor = this.renk;
         return satir;
     }
 }
-
-
-
-
 
 function dropDownOlustur(){
     haftaList=[];
@@ -99,16 +103,36 @@ function dropDownOlustur(){
     return {uHaftaList,uYazarList};
 }
 
+// function haftaSec(){
+//     let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
+//     (autselect.value==="tum" || oyku.author === autselect.value));
+//     TabloYaz(altTablo);
+// }
+
 function haftaSec(){
-    let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-    (autselect.value==="tum" || oyku.author === autselect.value));
-    TabloYaz(altTablo);
+    let sayac=0;
+    for (oyku of Kutuphanem){
+        oyku.veriSatiri.style.display=`none`;
+    }
+    for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
+    (autselect.value==="tum" || oyku.author === autselect.value))){
+        oyku.veriSatiri.style.display= `table-row`;
+        sayac++;
+    }
+    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+sayac;;
 }
 
 function yazarSec(){
-    let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-    (autselect.value==="tum" || oyku.author === autselect.value));
-    TabloYaz(altTablo);  
+    let sayac=0;
+    for (oyku of Kutuphanem){
+        oyku.veriSatiri.style.display=`none`;
+    }
+    for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
+    (autselect.value==="tum" || oyku.author === autselect.value))){
+        oyku.veriSatiri.style.display= `table-row`;
+        sayac++;
+    }
+    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+sayac;
 }
 
 function yazarSec2(e){
@@ -125,29 +149,39 @@ function haftaSec2(e){
 
 function rassalSec()
 {
-    let altTablo=[];
+    // let altTablo=[];
     let rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
 
-    altTablo.push(rassaloyku);
+    // altTablo.push(rassaloyku);
+    for (oyku of Kutuphanem){
+        oyku.veriSatiri.style.display=`none`;
+    }
+    rassaloyku.veriSatiri.style.display=`table-row`;
     autselect.value=rassaloyku.author;
     weekselect.value=rassaloyku.hafta.slice(6);
-    TabloYaz(altTablo);  
+    // TabloYaz(altTablo);  
+    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: 1`;
 }
 
 function hepsiSec(){
     weekselect.value=`tum`;
     autselect.value=`tum`;
-    TabloYaz(Kutuphanem);
+    for (oyku of Kutuphanem){
+        oyku.veriSatiri.style.display=`table-row`;
+    }
+    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
 }
-
 
 function siralamaDegistir(){
     Kutuphanem.sort(haftaSiraFonksiyonu);
     
     function haftaSiraFonksiyonu(a, b) {
         return (a.hafta.slice(6) - b.hafta.slice(6))*-deg;
+    }    
+    listem.innerHTML=basHTML;
+    for (oyku of Kutuphanem){
+        listem.appendChild(oyku.veriSatiri);
     }
-    haftaSec();
     deg=-deg;
     if (deg===1){
         document.getElementById(`haftaBaslik`).textContent="Hafta ▼"
@@ -162,5 +196,9 @@ for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
 }
 
-TabloYaz(Kutuphanem);
+// TabloYaz(Kutuphanem);
+for (oyku of Kutuphanem){
+    listem.appendChild(oyku.veriSatiri);
+}
+document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
 dropDownOlustur();
