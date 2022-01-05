@@ -11,25 +11,6 @@ function oykuEkle(title, author, hafta, link){
     Kutuphanem.push(new Oyku(title, author, hafta, link));
 }
 
-// function TabloYaz(Tablo){
-//     listem.innerHTML=basHTML;
-//     for (let i = 0; i < Tablo.length; i++) {
-//         listem.appendChild(Tablo[i].tabloYaz(i));
-//     }
-//     document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Tablo.length;
-
-//     document.querySelectorAll(`.yazarKutusu`).forEach((yazar) => {
-//         yazar.addEventListener('click', yazarSec2);
-//     });
-//     document.querySelectorAll(`.haftaKutusu`).forEach((haff) => {
-//         haff.addEventListener('click', haftaSec2);
-//     });
-// }
-
-// function TabloYaz2()
-
-
-
 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
 class Oyku{
@@ -103,12 +84,6 @@ function dropDownOlustur(){
     return {uHaftaList,uYazarList};
 }
 
-// function haftaSec(){
-//     let altTablo = Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-//     (autselect.value==="tum" || oyku.author === autselect.value));
-//     TabloYaz(altTablo);
-// }
-
 function haftaSec(){
     let sayac=0;
     for (oyku of Kutuphanem){
@@ -149,17 +124,14 @@ function haftaSec2(e){
 
 function rassalSec()
 {
-    // let altTablo=[];
     let rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
 
-    // altTablo.push(rassaloyku);
     for (oyku of Kutuphanem){
         oyku.veriSatiri.style.display=`none`;
     }
     rassaloyku.veriSatiri.style.display=`table-row`;
     autselect.value=rassaloyku.author;
     weekselect.value=rassaloyku.hafta.slice(6);
-    // TabloYaz(altTablo);  
     document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: 1`;
 }
 
@@ -196,7 +168,7 @@ for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
 }
 
-// TabloYaz(Kutuphanem);
+
 for (oyku of Kutuphanem){
     listem.appendChild(oyku.veriSatiri);
 }

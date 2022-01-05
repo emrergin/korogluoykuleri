@@ -11,6 +11,10 @@ body{
 #filtreler{
     text-align: center;    
     margin: 4vh 0px;
+    display: flex;
+    gap:1vw;
+    align-items:stretch;
+    justify-content: center;
 }
 
 button,select{
@@ -60,6 +64,14 @@ table th:last-child{
 
 tr:nth-child(even){
     filter: brightness(90%);
+}
+
+ tr:nth-child(odd):hover{
+    filter: saturate(200%);
+}
+
+tr:nth-child(even):hover{
+    filter: saturate(200%) brightness(90%);
 }
 
 
