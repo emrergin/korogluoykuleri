@@ -15,10 +15,12 @@ body{
     gap:1vw;
     align-items:stretch;
     justify-content: center;
+    height: 2em;
+    /* flex-wrap: wrap; */
 }
 
 button,select{
-    font-size:2vmin;
+    font-size:1.25vh;
     border: none;
     padding: 1vmin;
     border-radius: 1vmin;
