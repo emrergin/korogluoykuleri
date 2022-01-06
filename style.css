@@ -26,8 +26,16 @@ button,select{
     height: 100%;
 }
 
-#rassalSec{
-    font-weight: 1000;
+button:hover{
+    filter: brightness(90%);
+}
+
+#sonraki{
+    border-radius: 0 50% 50% 0;
+}
+
+#onceki{
+    border-radius: 50% 0 0 50%;
 }
 
 #sayiMetin{
@@ -42,7 +50,6 @@ table{
 }
 
 table td{
-    /* border:1px solid #666; */
     padding: 1vw;
 }
 

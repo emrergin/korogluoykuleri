@@ -13,10 +13,13 @@
 <body>    
     </div>
     <div id="filtreler">
-        <select id="haftaSec" onchange="haftaSec()">
+        <button id="onceki" onclick="Eksilt()"style="display: none;">
+            Önceki
+         </button>
+        <select id="haftaSec" onchange="TabloYaz()">
             <option value="tum">Hafta Seç</option>
         </select>
-        <select id="yazarSec" onchange="yazarSec()">
+        <select id="yazarSec" onchange="TabloYaz()">
             <option value="tum">Yazar Seç</option>
         </select>
         <button id="rassalSec" onclick="rassalSec()">
@@ -25,6 +28,9 @@
         <button id="hepsiSec" onclick="hepsiSec()">
             Hepsi
          </button>
+         <button id="sonraki" onclick="Artir()" style="display: none;">
+            Sonraki
+         </button>
     </div>
     <p id="sayiMetin"> Öykü Sayısı: </p>
     <div id="container">
@@ -32,7 +38,6 @@
             <tr>
                 <th>Öykü</th>
                 <th>Yazar</th>
-                <!-- <th>Link</th> -->
                 <th id="haftaBaslik" onclick="siralamaDegistir()">Hafta ▼</th>
             </tr>
         </table>

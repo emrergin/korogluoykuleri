@@ -3,6 +3,8 @@ const listem=document.getElementById(`KitapListesi`);
 const weekselect = document.getElementById("haftaSec");
 const autselect = document.getElementById("yazarSec");
 const basHTML=listem.innerHTML;
+const oncekiDugme=document.getElementById(`onceki`);
+const sonrakiDugme=document.getElementById(`sonraki`);
 let renkArray=[];
 let deg=1;
 
@@ -42,12 +44,12 @@ class Oyku{
 
         yazar.textContent=this.author;
         yazar.classList.add(`yazarKutusu`);
-        yazar.addEventListener('click', yazarSec2);
+        yazar.addEventListener('click', yazarSec);
         satir.appendChild(yazar);
 
         hafta.textContent=this.hafta;
         hafta.classList.add(`haftaKutusu`);
-        hafta.addEventListener('click', haftaSec2);
+        hafta.addEventListener('click', haftaSec);
         satir.appendChild(hafta);
         
         satir.style.backgroundColor = this.renk;
@@ -84,64 +86,49 @@ function dropDownOlustur(){
     return {uHaftaList,uYazarList};
 }
 
-function haftaSec(){
+function TabloYaz(){
+    TabloSil();
     let sayac=0;
-    for (oyku of Kutuphanem){
-        oyku.veriSatiri.style.display=`none`;
-    }
-    for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-    (autselect.value==="tum" || oyku.author === autselect.value))){
-        oyku.veriSatiri.style.display= `table-row`;
-        sayac++;
-    }
-    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+sayac;;
-}
-
-function yazarSec(){
-    let sayac=0;
-    for (oyku of Kutuphanem){
-        oyku.veriSatiri.style.display=`none`;
-    }
     for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
     (autselect.value==="tum" || oyku.author === autselect.value))){
         oyku.veriSatiri.style.display= `table-row`;
         sayac++;
     }
     document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+sayac;
+    onSon();
+
+    function TabloSil(){
+        for (oyku of Kutuphanem){
+            oyku.veriSatiri.style.display=`none`;
+        }
+    }
 }
 
-function yazarSec2(e){
+function yazarSec(e){
     autselect.value=e.target.textContent;
     weekselect.value="tum";
-    yazarSec();
+    TabloYaz();
 }
 
-function haftaSec2(e){
+function haftaSec(e){
     weekselect.value=e.target.textContent.slice(6);
     autselect.value="tum";
-    haftaSec();
+    TabloYaz();
 }
 
 function rassalSec()
 {
     let rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
 
-    for (oyku of Kutuphanem){
-        oyku.veriSatiri.style.display=`none`;
-    }
-    rassaloyku.veriSatiri.style.display=`table-row`;
     autselect.value=rassaloyku.author;
     weekselect.value=rassaloyku.hafta.slice(6);
-    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: 1`;
+    TabloYaz();
 }
 
 function hepsiSec(){
     weekselect.value=`tum`;
     autselect.value=`tum`;
-    for (oyku of Kutuphanem){
-        oyku.veriSatiri.style.display=`table-row`;
-    }
-    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
+    TabloYaz();
 }
 
 function siralamaDegistir(){
@@ -163,6 +150,42 @@ function siralamaDegistir(){
     }    
 }
 
+function onSon(){
+    oncekiDugme.style.display=`none`;
+    sonrakiDugme.style.display=`none`;
+    if (weekselect.value!==`tum` && autselect.value===`tum`){
+        oncekiDugme.textContent=`Önceki Hafta`;
+        sonrakiDugme.textContent=`Sonraki Hafta`;
+        if (weekselect.value!==uHaftaList[0]){oncekiDugme.style.display=`block`;}
+        if (weekselect.value!==uHaftaList[uHaftaList.length-1]){sonrakiDugme.style.display=`block`;}
+    }
+    if (autselect.value!==`tum` && weekselect.value===`tum`){
+        oncekiDugme.textContent=`Önceki Yazar`;
+        sonrakiDugme.textContent=`Sonraki Yazar`;
+        if (autselect.value!==uYazarList[0]){oncekiDugme.style.display=`block`;}
+        if (autselect.value!=uYazarList[uYazarList.length-1]){sonrakiDugme.style.display=`block`;}
+    }
+}
+
+function Artir(){
+    if (weekselect.value===`tum`){
+        autselect.selectedIndex++;
+    }
+    else{
+        weekselect.selectedIndex++;
+    }
+    TabloYaz();
+}
+
+function Eksilt(){
+    if (weekselect.value===`tum`){
+        autselect.selectedIndex--;
+    }
+    else{
+        weekselect.selectedIndex--;
+    }
+    TabloYaz();
+}
 
 for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
@@ -173,4 +196,5 @@ for (oyku of Kutuphanem){
     listem.appendChild(oyku.veriSatiri);
 }
 document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
+onSon();
 dropDownOlustur();
