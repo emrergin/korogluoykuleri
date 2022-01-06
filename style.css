@@ -15,12 +15,12 @@ body{
     gap:1vw;
     align-items:stretch;
     justify-content: center;
-    height: 2em;
-    /* flex-wrap: wrap; */
+    /* height: 2em; */
+    flex-wrap: wrap;
 }
 
 button,select{
-    font-size:1.25vh;
+    font-size:2vh;
     border: none;
     padding: 1vmin;
     border-radius: 1vmin;
@@ -109,4 +109,19 @@ a:visited{
 #haftaBaslik:hover{
     background-color: #21895C;
     transition-duration: 0.35s;
+}
+
+/* Mobil */
+@media (max-width:700px) { 
+    #sonraki{
+        order: 10;
+    }
+    
+    #onceki{
+        order: 8;
+    }
+
+    #hepsiSec{
+        order:9;
+    }
 }
