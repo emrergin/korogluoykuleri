@@ -588,7 +588,6 @@ oykulerinTamami=[
     ["Hafta 31","Derya Kuru","Aharoni","https://docs.google.com/document/d/1lt_BGeARl_C5PbXfxyAu9zV6y4wX3Pu50qb-jmeyW_k/edit?usp=sharing"],
     ["Hafta 31","Musa Simsar","Saat 12:43","https://docs.google.com/document/d/1hWhtICpcNsrayW2pRxnlz8i1VLsP2o0ZrxGQwxW9Zlo/edit?usp=sharing"],
     ["Hafta 31","Şerife Bolat","Siyahın İçindeki Beyazım","https://docs.google.com/document/d/10oXeQE3IpSyavIJxxE66BOIcAbZiuQ2e8M3SmJ1_SAs/edit?usp=sharing"],
-    ["Hafta 31","Muhammed Galip Cantürk","Marangozun İntikamı","https://docs.google.com/document/d/1Tmse4IfGkmDzZcqMrNxm9im23y7MPiKYzQlNvfAUP3w/edit?usp=sharing"],
     ["Hafta 31","Zeynep Karaca","Bizden Olur Mu?","https://docs.google.com/document/d/1ytpPMHVrVuGDP_SXLPunmLI4h1Ljyan0-EJ7ulK6tVk/edit?usp=sharing"],
     ["Hafta 31","Elif Ezgi Bektaş","İsyan Var","https://docs.google.com/document/d/1NvpSFpPMJ5jRvC593y3YH8uZRT5-Jyr84y5QWPSTlLY/edit?usp=drivesdk"],
     ["Hafta 31","Tuğçe Asiye Ballı","Dört Mevsim","https://docs.google.com/document/d/16MJPNOUFkNi-Uvjqe2-YM1F1jJCWBKo9e70EOmBX_kg/edit?usp=sharing"],
