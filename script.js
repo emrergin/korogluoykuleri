@@ -198,3 +198,4 @@ for (oyku of Kutuphanem){
 document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
 onSon();
 dropDownOlustur();
+siralamaDegistir();

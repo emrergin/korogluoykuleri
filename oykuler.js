@@ -979,5 +979,8 @@ oykulerinTamami=[
     ["Hafta 68","Hacer Uyğur","Samurayın Dönüşü","https://docs.google.com/document/d/10abmKKGtYNtZ0IxPf2xsl2g1jpWgJVR2qCzrXhJB_PI/edit?usp=sharing"],
     ["Hafta 68","Fatma Ünsal","Çok Kere Ölmek","https://docs.google.com/document/d/1VFPyaUkMiNitx5HkmLosQulgfirJ6rWiNc4rwEdVBDc/edit?usp=sharing"],
     ["Hafta 68","Fatma Dursun","Ronin'in Yemini","https://docs.google.com/document/d/1nEIEtgAiDs4d67wED6aSbuGDgrpSbV4DqI3ZOk6sxVo/edit?usp=sharing"],
-    ["Hafta 68","Emine Ecran Çeliksu","Kaçak","https://docs.google.com/document/d/1TDNajAOXmWG_asywZNI1V2DRcC9bnZqMOM-XIHZBfMA/edit"]
+    ["Hafta 68","Emine Ecran Çeliksu","Kaçak","https://docs.google.com/document/d/1TDNajAOXmWG_asywZNI1V2DRcC9bnZqMOM-XIHZBfMA/edit"],
+    ["Hafta 69","Yakup Karahan","Raci Cingöz","https://docs.google.com/document/d/1dZK9ma-Y9jdCAbVkURi-qL5qfY3XXM4hp5tkopaTOFI/edit?usp=drivesdk"], 
+    ["Hafta 69","Ayşenur Önler","Gün Günden Odamın Şeklini Alıyorum/2","https://docs.google.com/document/d/1q6b3vqzQs9jIZGqWlsqn_pl-aPgIAx-akJUxK24WxeM/edit"], 
+    ["Hafta 69","Hacer Noğman","Vuslata Değin İnsan/2","https://docs.google.com/document/d/1rVounDtQZlopEBAduCtzxZ6bgeVewHlZ-GYMsObfVw0/edit"] 
   ];
