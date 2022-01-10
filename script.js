@@ -65,7 +65,9 @@ function dropDownOlustur(){
         yazarList.push(Kutuphanem[i].author);
     }
 
-    uHaftaList=[...new Set(haftaList)];
+    uHaftaList=[...new Set(haftaList)].sort(function(a, b) {
+        return a - b;
+      });
     uYazarList=[...new Set(yazarList)].sort(function (a, b) {
             return a.localeCompare(b);
           });
@@ -198,4 +200,3 @@ for (oyku of Kutuphanem){
 document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
 onSon();
 dropDownOlustur();
-siralamaDegistir();
