@@ -228,7 +228,7 @@ oykulerinTamami=
   ["Hafta 44","Meryem Aytaş","Beyaz","https://docs.google.com/document/d/1w4WUYYdKeB-EPBvciT5Q5xQQqCr-MhZQtKR7SajZfxA/edit"],
   ["Hafta 44","Büşra Baysal","Hasan ve Patrik Sobe!","https://docs.google.com/document/d/1O2BX4mUYW3eIuYE9ybuNw_dOysZTgs0T6JaUwTgkeMw/edit?usp=drivesdk"],
   ["Hafta 44","Fatma Dursun","Nezaketin Acısı","https://docs.google.com/document/d/1zQl7OqPLxodUOMwlN4nQ--tihPF6J1DRRNOFQQzRNwY/edit?usp=sharing"],
-  ["Hafta 44","Emine Ecran Çeliksu","Çürüklerin Sancısı","https://docs.google.com/document/d/1CNvoAUiaG2N9R4nbxj8JcnPbCcOJ9tdkfHCmKrfY8Bk/edit"]
+  ["Hafta 44","Emine Ecran Çeliksu","Çürüklerin Sancısı","https://docs.google.com/document/d/1CNvoAUiaG2N9R4nbxj8JcnPbCcOJ9tdkfHCmKrfY8Bk/edit"],
   ["Hafta 43","Esma Topaloğlu","Sessiz İstanbul","https://docs.google.com/document/d/1Y3ywYOYplNTg19ZsIhLIK7w6Zs7HEyq6yo5fjlO8FN0/edit?usp=sharing"],
   ["Hafta 43","Feyza Nur Çalık","Gidemeyişinin 72. Günü","https://docs.google.com/document/d/1B1VKNtdcyOW4M-Y7pGBDcnLO1cmMC0yo_9CkTmPLwwY/edit?usp=drivesdk"],
   ["Hafta 43","Beyza Öztürk","Eşikteyim, Eşiktesin, Eşikteler","https://docs.google.com/document/d/1o9Y9nk-FurYctSzHpNPVcao4zbiEaH0mYeKmxiPLTAs/edit"],
