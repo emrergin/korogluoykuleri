@@ -26,7 +26,7 @@ class Oyku{
         }
         this.renk=renkArray[this.hafta.slice(6)];
         this.veriSatiri=this.tabloYaz();
-        this.included=true;
+        // this.included=true;
     }
 
     tabloYaz(){
@@ -96,7 +96,12 @@ function TabloYaz(){
         oyku.veriSatiri.style.display= `table-row`;
         sayac++;
     }
-    document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+sayac;
+    document.getElementById(`sayiMetin`).textContent=``;
+    if (weekselect.value!=="tum"){
+        document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[uHaftaList.length-weekselect.value]+`. `;
+    }
+    document.getElementById(`sayiMetin`).textContent+=`Öykü Sayısı: `+sayac;
+
     onSon();
 
     function TabloSil(){
