@@ -8,7 +8,7 @@ const sonrakiDugme=document.getElementById(`sonraki`);
 const cekboks=document.getElementById("eskiOykuler");
 const cekboksCont=document.getElementById(`eskiOykuContainer`);
 let renkArray=[];
-let deg=1;
+let deg=-1;
 
 
 function oykuEkle(title, author, hafta, link,eskiMi){
@@ -31,7 +31,6 @@ class Oyku{
         this.veriSatiri=this.tabloYaz();
     }
 
-    // tabloYaz=() =>{
     tabloYaz(){
         let satir= document.createElement('tr');
         let baslik= document.createElement('td');
@@ -110,15 +109,24 @@ function dropDownOlustur(){
     }
 }
 
-function TabloYaz(){
+function TabloYaz(secilenOyku){
+    
     TabloSil();
     let sayac=0;
-    for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-    (autselect.value==="tum" || oyku.author === autselect.value) && (cekboks.checked || oyku.eskiMi===`yeni`))){
-        oyku.veriSatiri.style.display= `table-row`;
-        sayac++;
-    }
     document.getElementById(`sayiMetin`).textContent=``;
+
+    if (secilenOyku===undefined){
+        for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
+        (autselect.value==="tum" || oyku.author === autselect.value) && (cekboks.checked || oyku.eskiMi===`yeni`))){
+            oyku.veriSatiri.style.display= `table-row`;
+            sayac++;
+        }
+    }
+    if (secilenOyku!==undefined){
+        secilenOyku.veriSatiri.style.display= `table-row`;
+        sayac=1;
+    }
+    
     if (weekselect.value!=="tum"){
         if (!cekboks.checked){
             document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[uHaftaList.length-weekselect.value]+`. `;
@@ -167,7 +175,7 @@ function rassalSec()
 
     autselect.value=rassaloyku.author;
     weekselect.value=rassaloyku.hafta.slice(6);
-    TabloYaz();
+    TabloYaz(rassaloyku);
 }
 
 function hepsiSec(){
