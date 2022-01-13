@@ -16,3 +16,4 @@ I thank Hacer Noğman, a student of mine from the workshop, for constant suggest
 
 ### Sources
 - Favicon: https://pixabay.com/images/id-2022464/
+- https://shancarter.github.io/mr-data-converter/ is a godsend.

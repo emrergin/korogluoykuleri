@@ -124,8 +124,9 @@ function TabloYaz(){
             document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[uHaftaList.length-weekselect.value]+`. `;
         }
         else{
-            if (weekselect.value<18){
+            if (weekselect.value<=18){
                 document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2015[Tarihler2015.length-weekselect.value]+`. `; 
+                // document.getElementById(`sayiMetin`).textContent=Tarihler2015.length-weekselect.value; 
             }
             else{
                 document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[Tarihler2021.length-weekselect.value+18]+`. `;
