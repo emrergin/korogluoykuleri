@@ -8,7 +8,7 @@ body{
 }
 
 
-#filtreler{
+#filtreler,#eskiOykuContainer{
     text-align: center;    
     margin: 4vh 0px;
     display: flex;
@@ -18,6 +18,10 @@ body{
     /* height: 2em; */
     flex-wrap: wrap;
 }
+
+/* #eskiOykuler{
+    text-align: center;
+} */
 
 button,select{
     font-size:2vh;

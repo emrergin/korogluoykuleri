@@ -5,30 +5,33 @@ const autselect = document.getElementById("yazarSec");
 const basHTML=listem.innerHTML;
 const oncekiDugme=document.getElementById(`onceki`);
 const sonrakiDugme=document.getElementById(`sonraki`);
+const cekboks=document.getElementById("eskiOykuler");
+const cekboksCont=document.getElementById(`eskiOykuContainer`);
 let renkArray=[];
 let deg=1;
 
 
-function oykuEkle(title, author, hafta, link){
-    Kutuphanem.push(new Oyku(title, author, hafta, link));
+function oykuEkle(title, author, hafta, link,eskiMi){
+    Kutuphanem.push(new Oyku(title, author, hafta, link,eskiMi));
 }
 
 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
 class Oyku{
-    constructor(title, author, hafta, link){
+    constructor(title, author, hafta, link,eskiMi){
         this.title = title;
         this.author = author;
         this.hafta = hafta;
         this.link = link;
+        this.eskiMi=eskiMi;
         if (renkArray[this.hafta.slice(6)]===undefined){
             renkArray[this.hafta.slice(6)]=`rgb(${randomBetween(220,255)},${randomBetween(220,255)},${randomBetween(220,255)})`;
         }
         this.renk=renkArray[this.hafta.slice(6)];
         this.veriSatiri=this.tabloYaz();
-        // this.included=true;
     }
 
+    // tabloYaz=() =>{
     tabloYaz(){
         let satir= document.createElement('tr');
         let baslik= document.createElement('td');
@@ -58,11 +61,21 @@ class Oyku{
 }
 
 function dropDownOlustur(){
+    removeOptions(weekselect);
+    removeOptions(autselect);
     haftaList=[];
     yazarList=[];
-    for (let i = 0; i < Kutuphanem.length; i++) {
-        haftaList.push(Kutuphanem[i].hafta.slice(6));
-        yazarList.push(Kutuphanem[i].author);
+    if (!cekboks.checked){
+        for (let i = 0; i < oykulerinTamami.length; i++) {
+            haftaList.push(Kutuphanem[i].hafta.slice(6));
+            yazarList.push(Kutuphanem[i].author);
+        }
+    }
+    else{
+        for (let i = 0; i < Kutuphanem.length; i++) {
+            haftaList.push(Kutuphanem[i].hafta.slice(6));
+            yazarList.push(Kutuphanem[i].author);
+        }  
     }
 
     uHaftaList=[...new Set(haftaList)].sort(function(a, b) {
@@ -86,19 +99,38 @@ function dropDownOlustur(){
         autselect.appendChild(yel);
     }
     return {uHaftaList,uYazarList};
+
+    // =======
+
+    function removeOptions(selectElement) {
+        var i, L = selectElement.options.length - 1;
+        for(i = L; i > 0; i--) {
+           selectElement.remove(i);
+        }
+    }
 }
 
 function TabloYaz(){
     TabloSil();
     let sayac=0;
     for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-    (autselect.value==="tum" || oyku.author === autselect.value))){
+    (autselect.value==="tum" || oyku.author === autselect.value) && (cekboks.checked || oyku.eskiMi===`yeni`))){
         oyku.veriSatiri.style.display= `table-row`;
         sayac++;
     }
     document.getElementById(`sayiMetin`).textContent=``;
     if (weekselect.value!=="tum"){
-        document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[uHaftaList.length-weekselect.value]+`. `;
+        if (!cekboks.checked){
+            document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[uHaftaList.length-weekselect.value]+`. `;
+        }
+        else{
+            if (weekselect.value<18){
+                document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2015[Tarihler2015.length-weekselect.value]+`. `; 
+            }
+            else{
+                document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[Tarihler2021.length-weekselect.value+18]+`. `;
+            }
+        }
     }
     document.getElementById(`sayiMetin`).textContent+=`Öykü Sayısı: `+sayac;
 
@@ -160,6 +192,7 @@ function siralamaDegistir(){
 function onSon(){
     oncekiDugme.style.display=`none`;
     sonrakiDugme.style.display=`none`;
+    cekboksCont.style.display="none";
     if (weekselect.value!==`tum` && autselect.value===`tum`){
         oncekiDugme.textContent=`Önceki Hafta`;
         sonrakiDugme.textContent=`Sonraki Hafta`;
@@ -171,6 +204,9 @@ function onSon(){
         sonrakiDugme.textContent=`Sonraki Yazar`;
         if (autselect.value!==uYazarList[0]){oncekiDugme.style.display=`block`;}
         if (autselect.value!=uYazarList[uYazarList.length-1]){sonrakiDugme.style.display=`block`;}
+    }
+    if (weekselect.value===`tum` && autselect.value===`tum`){
+        cekboksCont.style.display="block";
     }
 }
 
@@ -194,14 +230,37 @@ function Eksilt(){
     TabloYaz();
 }
 
-for (let i = 0; i < oykulerinTamami.length; i++) {
-    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3]);
+function eskileriEkleCikar(val){
+    if (val){
+        for (let i = 0; i < oykulerinTamami.length; i++){
+            Kutuphanem[i].hafta=`Hafta ${parseInt(Kutuphanem[i].hafta.slice(6))+18}`;
+            Kutuphanem[i].veriSatiri.children[2].textContent=Kutuphanem[i].hafta;
+        }
+    }
+    else{
+        for (let i = 0; i < oykulerinTamami.length; i++){
+            Kutuphanem[i].hafta=`Hafta ${parseInt(Kutuphanem[i].hafta.slice(6))-18}`;
+            Kutuphanem[i].veriSatiri.children[2].textContent=Kutuphanem[i].hafta;
+        }
+    }
+    dropDownOlustur();
+    TabloYaz();
 }
 
+for (let i = 0; i < oykulerinTamami.length; i++) {
+    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3],`yeni`);
+}
+
+for (let i = 0; i < EskiOykuler.length; i++) {
+    oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],`eski`);
+}
 
 for (oyku of Kutuphanem){
+    if (oyku.eskiMi===`eski`){
+        oyku.veriSatiri.style.display=`none`;
+    }
     listem.appendChild(oyku.veriSatiri);
 }
-document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+Kutuphanem.length;
+document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+oykulerinTamami.length;
 onSon();
 dropDownOlustur();
