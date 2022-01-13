@@ -189,11 +189,10 @@ function siralamaDegistir(){
     
     function haftaSiraFonksiyonu(a, b) {
         return (a.hafta.slice(6) - b.hafta.slice(6))*-deg;
-    }    
-    listem.innerHTML=basHTML;
-    for (oyku of Kutuphanem){
-        listem.appendChild(oyku.veriSatiri);
     }
+
+    listem.innerHTML=basHTML;
+    oykuleriTabloyaEkle();
     deg=-deg;
     if (deg===1){
         document.getElementById(`haftaBaslik`).textContent="Hafta ▼"
@@ -261,6 +260,17 @@ function eskileriEkleCikar(val){
     TabloYaz();
 }
 
+function oykuleriTabloyaEkle(){
+    for (oyku of Kutuphanem){
+        if (oyku.eskiMi===`eski` && !cekboks.checked){
+            oyku.veriSatiri.style.display=`none`;
+        }
+        listem.appendChild(oyku.veriSatiri);
+    }
+}
+
+
+
 for (let i = 0; i < oykulerinTamami.length; i++) {
     oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3],`yeni`);
 }
@@ -269,12 +279,7 @@ for (let i = 0; i < EskiOykuler.length; i++) {
     oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],`eski`);
 }
 
-for (oyku of Kutuphanem){
-    if (oyku.eskiMi===`eski`){
-        oyku.veriSatiri.style.display=`none`;
-    }
-    listem.appendChild(oyku.veriSatiri);
-}
+oykuleriTabloyaEkle();
 document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+oykulerinTamami.length;
 onSon();
 dropDownOlustur();
