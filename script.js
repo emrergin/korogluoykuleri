@@ -126,7 +126,6 @@ function TabloYaz(){
         else{
             if (weekselect.value<=18){
                 document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2015[Tarihler2015.length-weekselect.value]+`. `; 
-                // document.getElementById(`sayiMetin`).textContent=Tarihler2015.length-weekselect.value; 
             }
             else{
                 document.getElementById(`sayiMetin`).textContent=`Yazıldığı tarih: `+Tarihler2021[Tarihler2021.length-weekselect.value+18]+`. `;
@@ -158,7 +157,13 @@ function haftaSec(e){
 
 function rassalSec()
 {
-    let rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
+    let rassaloyku={};
+    if (cekboks.checked){
+        rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
+    }
+    else{
+        rassaloyku= Kutuphanem[Math.floor(Math.random()*oykulerinTamami.length)];
+    }
 
     autselect.value=rassaloyku.author;
     weekselect.value=rassaloyku.hafta.slice(6);
