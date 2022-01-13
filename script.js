@@ -197,15 +197,17 @@ function hepsiSec(){
     TabloYaz();
 }
 
+
+
 function siralamaDegistir(){
     Kutuphanem.sort(haftaSiraFonksiyonu);
     
     function haftaSiraFonksiyonu(a, b) {
         return (a.hafta.slice(6) - b.hafta.slice(6))*-deg;
     }
-
     listem.innerHTML=basHTML;
     oykuleriTabloyaEkle();
+
     deg=-deg;
     if (deg===1){
         document.getElementById(`haftaBaslik`).textContent="Hafta ▼"
@@ -274,6 +276,8 @@ function eskileriEkleCikar(val){
         }
     }
     dropDownOlustur();
+    siralamaDegistir();
+    siralamaDegistir();
     TabloYaz();
 }
 
