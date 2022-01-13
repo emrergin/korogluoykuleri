@@ -64,17 +64,27 @@ function dropDownOlustur(){
     removeOptions(autselect);
     haftaList=[];
     yazarList=[];
-    if (!cekboks.checked){
-        for (let i = 0; i < oykulerinTamami.length; i++) {
-            haftaList.push(Kutuphanem[i].hafta.slice(6));
-            yazarList.push(Kutuphanem[i].author);
+    // if (!cekboks.checked){
+    //     for (let i = 0; i < oykulerinTamami.length; i++) {
+    //         haftaList.push(Kutuphanem[i].hafta.slice(6));
+    //         yazarList.push(Kutuphanem[i].author);
+    //     }
+    // }
+    // else{
+    //     for (let i = 0; i < Kutuphanem.length; i++) {
+    //         haftaList.push(Kutuphanem[i].hafta.slice(6));
+    //         yazarList.push(Kutuphanem[i].author);
+    //     }  
+    // }
+
+    for (oyku of Kutuphanem){
+        haftaList.push(oyku.hafta.slice(6));
+        if (cekboks.checked){
+            yazarList.push(oyku.author);
         }
-    }
-    else{
-        for (let i = 0; i < Kutuphanem.length; i++) {
-            haftaList.push(Kutuphanem[i].hafta.slice(6));
-            yazarList.push(Kutuphanem[i].author);
-        }  
+        else if(oyku.eskiMi===`yeni`){
+            yazarList.push(oyku.author);
+        }
     }
 
     uHaftaList=[...new Set(haftaList)].sort(function(a, b) {
@@ -169,8 +179,11 @@ function rassalSec()
     if (cekboks.checked){
         rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
     }
-    else{
+    else if (deg===-1){
         rassaloyku= Kutuphanem[Math.floor(Math.random()*oykulerinTamami.length)];
+    }
+    else{
+        rassaloyku= Kutuphanem[Math.floor(Math.random()*oykulerinTamami.length)+EskiOykuler.length];
     }
 
     autselect.value=rassaloyku.author;
@@ -245,15 +258,19 @@ function Eksilt(){
 
 function eskileriEkleCikar(val){
     if (val){
-        for (let i = 0; i < oykulerinTamami.length; i++){
-            Kutuphanem[i].hafta=`Hafta ${parseInt(Kutuphanem[i].hafta.slice(6))+18}`;
-            Kutuphanem[i].veriSatiri.children[2].textContent=Kutuphanem[i].hafta;
+        for (oyku of Kutuphanem){
+            if (oyku.eskiMi===`yeni`){
+                oyku.hafta=`Hafta ${parseInt(oyku.hafta.slice(6))+18}`;
+                oyku.veriSatiri.children[2].textContent=oyku.hafta;
+            }
         }
     }
     else{
-        for (let i = 0; i < oykulerinTamami.length; i++){
-            Kutuphanem[i].hafta=`Hafta ${parseInt(Kutuphanem[i].hafta.slice(6))-18}`;
-            Kutuphanem[i].veriSatiri.children[2].textContent=Kutuphanem[i].hafta;
+        for (oyku of Kutuphanem){
+            if (oyku.eskiMi===`yeni`){
+                oyku.hafta=`Hafta ${parseInt(oyku.hafta.slice(6))-18}`;
+                oyku.veriSatiri.children[2].textContent=oyku.hafta;
+            }
         }
     }
     dropDownOlustur();
