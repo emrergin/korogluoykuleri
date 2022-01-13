@@ -64,18 +64,6 @@ function dropDownOlustur(){
     removeOptions(autselect);
     haftaList=[];
     yazarList=[];
-    // if (!cekboks.checked){
-    //     for (let i = 0; i < oykulerinTamami.length; i++) {
-    //         haftaList.push(Kutuphanem[i].hafta.slice(6));
-    //         yazarList.push(Kutuphanem[i].author);
-    //     }
-    // }
-    // else{
-    //     for (let i = 0; i < Kutuphanem.length; i++) {
-    //         haftaList.push(Kutuphanem[i].hafta.slice(6));
-    //         yazarList.push(Kutuphanem[i].author);
-    //     }  
-    // }
 
     for (oyku of Kutuphanem){
         haftaList.push(oyku.hafta.slice(6));
