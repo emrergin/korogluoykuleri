@@ -70,7 +70,7 @@ function dropDownOlustur(){
         if (cekboks.checked){
             yazarList.push(oyku.author);
         }
-        else if(oyku.eskiMi===`yeni`){
+        else if(!oyku.eskiMi){
             yazarList.push(oyku.author);
         }
     }
@@ -115,7 +115,7 @@ function TabloYaz(secilenOyku){
 
     if (secilenOyku===undefined){
         for (oyku of Kutuphanem.filter(oyku => (weekselect.value==="tum" || oyku.hafta === `Hafta `+weekselect.value) && 
-        (autselect.value==="tum" || oyku.author === autselect.value) && (cekboks.checked || oyku.eskiMi===`yeni`))){
+        (autselect.value==="tum" || oyku.author === autselect.value) && (cekboks.checked || !oyku.eskiMi))){
             oyku.veriSatiri.style.display= `table-row`;
             sayac++;
         }
@@ -249,7 +249,7 @@ function Eksilt(){
 function eskileriEkleCikar(val){
     if (val){
         for (oyku of Kutuphanem){
-            if (oyku.eskiMi===`yeni`){
+            if (!oyku.eskiMi){
                 oyku.hafta=`Hafta ${parseInt(oyku.hafta.slice(6))+18}`;
                 oyku.veriSatiri.children[2].textContent=oyku.hafta;
             }
@@ -257,7 +257,7 @@ function eskileriEkleCikar(val){
     }
     else{
         for (oyku of Kutuphanem){
-            if (oyku.eskiMi===`yeni`){
+            if (!oyku.eskiMi){
                 oyku.hafta=`Hafta ${parseInt(oyku.hafta.slice(6))-18}`;
                 oyku.veriSatiri.children[2].textContent=oyku.hafta;
             }
@@ -271,7 +271,7 @@ function eskileriEkleCikar(val){
 
 function oykuleriTabloyaEkle(){
     for (oyku of Kutuphanem){
-        if (oyku.eskiMi===`eski` && !cekboks.checked){
+        if (oyku.eskiMi && !cekboks.checked){
             oyku.veriSatiri.style.display=`none`;
         }
         listem.appendChild(oyku.veriSatiri);
@@ -281,11 +281,11 @@ function oykuleriTabloyaEkle(){
 
 
 for (let i = 0; i < oykulerinTamami.length; i++) {
-    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3],`yeni`);
+    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3],false);
 }
 
 for (let i = 0; i < EskiOykuler.length; i++) {
-    oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],`eski`);
+    oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],true);
 }
 
 oykuleriTabloyaEkle();
