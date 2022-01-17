@@ -1,5 +1,7 @@
 oykulerinTamami=
-[
+[ 
+  ["Hafta 70","Fatma Ünsal","Sen Giderken Kalıyor Geride Gidenler","https://docs.google.com/document/d/1VSsP2OJ3fmTaZfatEv3iKeTWSmwAGVrNbHXMTHyBwl4/edit"], 
+  ["Hafta 70","Hacer Noğman","Memleketin Yüz Karası","https://docs.google.com/document/d/1Bg2tAIA-DvYU6o37tT3QQ0FYL0dIuBwUP4ih46vMNS4/edit"],
   ["Hafta 69","Yakup Karahan","Raci Cingöz","https://docs.google.com/document/d/1dZK9ma-Y9jdCAbVkURi-qL5qfY3XXM4hp5tkopaTOFI/edit?usp=drivesdk"],
   ["Hafta 69","Ayşenur Önler","Gün Günden Odamın Şeklini Alıyorum/2","https://docs.google.com/document/d/1q6b3vqzQs9jIZGqWlsqn_pl-aPgIAx-akJUxK24WxeM/edit"],
   ["Hafta 69","Hacer Noğman","Vuslata Değin İnsan/2","https://docs.google.com/document/d/1rVounDtQZlopEBAduCtzxZ6bgeVewHlZ-GYMsObfVw0/edit"],
@@ -986,7 +988,7 @@ oykulerinTamami=
   ["Hafta 1","Yasemin Horzum","Başlıksız","https://docs.google.com/document/d/1R2NEkdpse4qi9LMdPspIqofKxoaiPcTCiIj4C9oolLU/edit"]
 ];
 
-Tarihler2021= ["09.01.2022","26.12.2021","05.12.2021","21.11.2021","14.11.2021","31.10.2021","24.10.2021",
+Tarihler2021= ["16.01.2022","09.01.2022","26.12.2021","05.12.2021","21.11.2021","14.11.2021","31.10.2021","24.10.2021",
 "10.10.2021","03.10.2021","19.09.2021","12.09.2021","05.09.2021","29.08.2021","22.08.2021","01.08.2021",
 "18.07.2021","04.07.2021","27.06.2021","20.06.2021","06.06.2021","30.05.2021","23.05.2021","09.05.2021",
 "02.05.2021","25.04.2021","11.04.2021","04.04.2021","28.03.2021","14.03.2021","07.03.2021","28.02.2021",
