@@ -19,10 +19,6 @@ body{
     flex-wrap: wrap;
 }
 
-/* #eskiOykuler{
-    text-align: center;
-} */
-
 button,select{
     font-size:2vh;
     border: none;
