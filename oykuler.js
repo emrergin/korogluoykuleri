@@ -1,5 +1,9 @@
 oykulerinTamami=
 [ 
+  ["Hafta 72","Fatma Ünsal","Proleter","https://docs.google.com/document/d/1ryWGk31P_5SQc4RR4A5hglsKj4t_ILoYLTldFGvSlMw/edit?usp=sharing"], 
+  ["Hafta 72","Ayşenur Önler","Kaçın Kendini","https://docs.google.com/document/d/1_IuWfiTx2sEt3zJJMQXj0YjdWz7TamgDk_w88-tFDU4/edit?usp=sharing"], 
+  ["Hafta 72","Hacer Noğman","Gördüğü Ses","https://docs.google.com/document/d/1faUyqNlrwQyZ8WqU0DqMZrtWsOrNR8cduiZsG7iM6zs/edit?usp=sharing"], 
+  ["Hafta 72","Tuğçe Asiye Ballı","Otuz Dokuz Gün","https://docs.google.com/document/d/16O97SeONLdl2EMgdqllugfwLmh8OuuOa00lhCL2QKdU/edit?usp=sharing"],
   ["Hafta 71","Hacer Noğman","Adı Yok","https://docs.google.com/document/d/1Ce3AoIV7Q5KssFepLkbbXXoDR9JnmHkImd2ElnwKMXk/edit"],
   ["Hafta 71","Fatma Dursun","Yığınlar Altında","https://docs.google.com/document/d/1Hx1DSukeABkNnRAtYFa0VcM1iO0XGOOuxOFXoGjs8GE/edit"],
   ["Hafta 70","Fatma Ünsal","Memleketin Yüz Karası","https://docs.google.com/document/d/1VSsP2OJ3fmTaZfatEv3iKeTWSmwAGVrNbHXMTHyBwl4/edit"], 
@@ -990,7 +994,7 @@ oykulerinTamami=
   ["Hafta 1","Yasemin Horzum","Başlıksız","https://docs.google.com/document/d/1R2NEkdpse4qi9LMdPspIqofKxoaiPcTCiIj4C9oolLU/edit"]
 ];
 
-Tarihler2021= ["30.01.2022","16.01.2022","09.01.2022","26.12.2021","05.12.2021","21.11.2021","14.11.2021","31.10.2021","24.10.2021",
+Tarihler2021= ["13.02.2022","30.01.2022","16.01.2022","09.01.2022","26.12.2021","05.12.2021","21.11.2021","14.11.2021","31.10.2021","24.10.2021",
 "10.10.2021","03.10.2021","19.09.2021","12.09.2021","05.09.2021","29.08.2021","22.08.2021","01.08.2021",
 "18.07.2021","04.07.2021","27.06.2021","20.06.2021","06.06.2021","30.05.2021","23.05.2021","09.05.2021",
 "02.05.2021","25.04.2021","11.04.2021","04.04.2021","28.03.2021","14.03.2021","07.03.2021","28.02.2021",
