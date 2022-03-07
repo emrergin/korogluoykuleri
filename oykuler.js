@@ -1,5 +1,7 @@
 oykulerinTamami=
 [ 
+  ["Hafta 74","Ayşenur Önler","Yolun Kokusu","https://docs.google.com/document/d/1xddNp0lT27X7Kax4Ezdry8-ETS3z6jHU-y372HIcWKo/edit"],
+  ["Hafta 74","Tuğçe Asiye Ballı","Başka Bir Son","https://docs.google.com/document/d/1jf8okCva6qBmvN4ful_U0_Z74WGkeKvAHd0rAZuY67M/edit"],
   ["Hafta 73","Fatma Dursun","Arındırılmış","https://docs.google.com/document/d/1PCk-np6CjG5DEGNk104hUYPWXbRofbnjNxDJt3aG37A/edit"],
   ["Hafta 73","Hacer Noğman","Ruhumuz Sarkarken","https://docs.google.com/document/d/1Z_uMAJnqwbZrvGCpedSxwHe_4khNdiya-CHlIKcj7XQ/edit"],
   ["Hafta 73","Emine Ecran Çeliksu","Mezardan Dünyaya! Mezardan Dünyaya! Ölü Konuşuyor, Tamam!","https://docs.google.com/document/d/1D9BcoukuD2WBo2a1xDRnuaYSzp8D2AynDN6byjKuL9k/edit"],
@@ -997,7 +999,8 @@ oykulerinTamami=
   ["Hafta 1","Yasemin Horzum","Başlıksız","https://docs.google.com/document/d/1R2NEkdpse4qi9LMdPspIqofKxoaiPcTCiIj4C9oolLU/edit"]
 ];
 
-Tarihler2021= ["27.02.2022","13.02.2022","30.01.2022","16.01.2022","09.01.2022","26.12.2021","05.12.2021","21.11.2021","14.11.2021","31.10.2021","24.10.2021",
+Tarihler2021= ["06.03.2022","27.02.2022","13.02.2022","30.01.2022","16.01.2022","09.01.2022","26.12.2021",
+"05.12.2021","21.11.2021","14.11.2021","31.10.2021","24.10.2021",
 "10.10.2021","03.10.2021","19.09.2021","12.09.2021","05.09.2021","29.08.2021","22.08.2021","01.08.2021",
 "18.07.2021","04.07.2021","27.06.2021","20.06.2021","06.06.2021","30.05.2021","23.05.2021","09.05.2021",
 "02.05.2021","25.04.2021","11.04.2021","04.04.2021","28.03.2021","14.03.2021","07.03.2021","28.02.2021",
