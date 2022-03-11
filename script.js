@@ -168,10 +168,10 @@ function rassalSec()
         rassaloyku= Kutuphanem[Math.floor(Math.random()*Kutuphanem.length)];
     }
     else if (deg===-1){
-        rassaloyku= Kutuphanem[Math.floor(Math.random()*oykulerinTamami.length)];
+        rassaloyku= Kutuphanem[Math.floor(Math.random()*yeniOykulerinSayisi)];
     }
     else{
-        rassaloyku= Kutuphanem[Math.floor(Math.random()*oykulerinTamami.length)+EskiOykuler.length];
+        rassaloyku= Kutuphanem[Math.floor(Math.random()*yeniOykulerinSayisi)+EskiOykuler.length];
     }
 
     autselect.value=rassaloyku.author;
@@ -279,16 +279,27 @@ function oykuleriTabloyaEkle(){
 }
 
 
-
-for (let i = 0; i < oykulerinTamami.length; i++) {
-    oykuEkle(oykulerinTamami[i][2],oykulerinTamami[i][1],oykulerinTamami[i][0],oykulerinTamami[i][3],false);
-}
-
 for (let i = 0; i < EskiOykuler.length; i++) {
     oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],true);
 }
+let yeniOykulerinSayisi=1;
 
-oykuleriTabloyaEkle();
-document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+oykulerinTamami.length;
-onSon();
-dropDownOlustur();
+fetch(`https://atolye.herokuapp.com/api/oykulerKisa`)
+    .then(res=>res.json())
+    .then(data => {
+        data.map(a=>oykuEkle(a[2],a[1],a[0],a[3],false));
+        oykuleriTabloyaEkle();
+        document.getElementById(`loading`).remove();
+        document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+data.length;
+        yeniOykulerinSayisi=data.length;
+        const tarihsizHaftaSayisi=[...new Set(Kutuphanem.map(item => item.hafta))].length-Tarihler2021.length;
+        for (let i = 0; i < tarihsizHaftaSayisi; i++){
+            let geciciTarih=new Date(Tarihler2021[0].split(`.`).reverse())  ;
+            geciciTarih.setDate(geciciTarih.getDate() + 7);
+            let g2=geciciTarih.toLocaleDateString('tr-TR', { year: 'numeric', month: 'numeric', day: 'numeric' });
+            Tarihler2021.unshift(g2);
+        }
+        onSon();
+        dropDownOlustur();        
+        })
+    .catch(err=> console.log(err.message));
