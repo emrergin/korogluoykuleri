@@ -278,11 +278,21 @@ function oykuleriTabloyaEkle(){
     }
 }
 
+// Baslangic=======
+let yeniOykulerinSayisi=1;
 
 for (let i = 0; i < EskiOykuler.length; i++) {
     oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],true);
 }
-let yeniOykulerinSayisi=1;
+
+const loading=document.createElement(`tr`);
+loading.setAttribute(`id`,`loading`);
+const loadingCell=document.createElement(`td`);
+loadingCell.setAttribute(`colspan`,3);
+loadingCell.textContent=`Yükleniyor...`;
+loading.appendChild(loadingCell);
+listem.appendChild(loading);
+
 
 fetch(`https://atolye.herokuapp.com/api/oykulerKisa`)
     .then(res=>res.json())
