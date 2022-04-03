@@ -285,31 +285,17 @@ for (let i = 0; i < EskiOykuler.length; i++) {
     oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],true);
 }
 
-const loading=document.createElement(`tr`);
-loading.setAttribute(`id`,`loading`);
-const loadingCell=document.createElement(`td`);
-loadingCell.setAttribute(`colspan`,3);
-loadingCell.textContent=`Yükleniyor...`;
-loading.appendChild(loadingCell);
-listem.appendChild(loading);
-
-
-fetch(`https://atolye.herokuapp.com/api/oykulerKisa`)
-    .then(res=>res.json())
-    .then(data => {
-        data.map(a=>oykuEkle(a[2],a[1],a[0],a[3],false));
-        oykuleriTabloyaEkle();
-        document.getElementById(`loading`).remove();
-        document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+data.length;
-        yeniOykulerinSayisi=data.length;
-        const tarihsizHaftaSayisi=[...new Set(Kutuphanem.map(item => item.hafta))].length-Tarihler2021.length;
-        for (let i = 0; i < tarihsizHaftaSayisi; i++){
-            let geciciTarih=new Date(Tarihler2021[0].split(`.`).reverse())  ;
-            geciciTarih.setDate(geciciTarih.getDate() + 7);
-            let g2=geciciTarih.toLocaleDateString('tr-TR', { year: 'numeric', month: 'numeric', day: 'numeric' });
-            Tarihler2021.unshift(g2);
-        }
-        onSon();
-        dropDownOlustur();        
-        })
-    .catch(err=> console.log(err.message));
+YeniOykuler.map(a=>oykuEkle(a[2],a[1],a[0],a[3],false));
+oykuleriTabloyaEkle();
+document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+YeniOykuler.length;
+yeniOykulerinSayisi=YeniOykuler.length;
+const tarihsizHaftaSayisi=[...new Set(Kutuphanem.map(item => item.hafta))].length-Tarihler2021.length;
+for (let i = 0; i < tarihsizHaftaSayisi; i++){
+    let geciciTarih=new Date(Tarihler2021[0].split(`.`).reverse())  ;
+    geciciTarih.setDate(geciciTarih.getDate() + 7);
+    let g2=geciciTarih.toLocaleDateString('tr-TR', { year: 'numeric', month: 'numeric', day: 'numeric' });
+    Tarihler2021.unshift(g2);
+}
+onSon();
+dropDownOlustur();        
+        
