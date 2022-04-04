@@ -279,16 +279,12 @@ function oykuleriTabloyaEkle(){
 }
 
 // Baslangic=======
-let yeniOykulerinSayisi=1;
-
-for (let i = 0; i < EskiOykuler.length; i++) {
-    oykuEkle(EskiOykuler[i][2],EskiOykuler[i][1],EskiOykuler[i][0],EskiOykuler[i][3],true);
-}
+let yeniOykulerinSayisi=YeniOykuler.length;
 
 YeniOykuler.map(a=>oykuEkle(a[2],a[1],a[0],a[3],false));
-oykuleriTabloyaEkle();
-document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+YeniOykuler.length;
-yeniOykulerinSayisi=YeniOykuler.length;
+
+document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+yeniOykulerinSayisi;
+
 const tarihsizHaftaSayisi=[...new Set(Kutuphanem.map(item => item.hafta))].length-Tarihler2021.length;
 for (let i = 0; i < tarihsizHaftaSayisi; i++){
     let geciciTarih=new Date(Tarihler2021[0].split(`.`).reverse())  ;
@@ -296,6 +292,10 @@ for (let i = 0; i < tarihsizHaftaSayisi; i++){
     let g2=geciciTarih.toLocaleDateString('tr-TR', { year: 'numeric', month: 'numeric', day: 'numeric' });
     Tarihler2021.unshift(g2);
 }
+
+EskiOykuler.map(a=>oykuEkle(a[2],a[1],a[0],a[3],true));
+
+oykuleriTabloyaEkle();
 onSon();
 dropDownOlustur();        
         
