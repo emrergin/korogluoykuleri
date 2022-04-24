@@ -1,7 +1,7 @@
 node oykuleriYenile.js
 git add -A
 git commit -m 'yeni hikayeler'
-git push main
+git push -f git@github.com:emrergin/korogluoykuleri.git main
 
 cd -
 
