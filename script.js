@@ -7,9 +7,10 @@ const oncekiDugme=document.getElementById(`onceki`);
 const sonrakiDugme=document.getElementById(`sonraki`);
 const cekboks=document.getElementById("eskiOykuler");
 const cekboksCont=document.getElementById(`eskiOykuContainer`);
-let renkArray=[];
-let deg=-1;
 
+  
+// let renkArray=[];
+let deg=-1;
 
 function oykuEkle(title, author, hafta, link,eskiMi){
     Kutuphanem.push(new Oyku(title, author, hafta, link,eskiMi));
@@ -24,10 +25,10 @@ class Oyku{
         this.hafta = hafta;
         this.link = link;
         this.eskiMi=eskiMi;
-        if (renkArray[this.hafta.slice(6)]===undefined){
-            renkArray[this.hafta.slice(6)]=`rgb(${randomBetween(220,255)},${randomBetween(220,255)},${randomBetween(220,255)})`;
-        }
-        this.renk=renkArray[this.hafta.slice(6)];
+        // if (renkArray[this.hafta.slice(6)]===undefined){
+        //     renkArray[this.hafta.slice(6)]=`rgb(${randomBetween(220,255)},${randomBetween(220,255)},${randomBetween(220,255)})`;
+        // }
+        // this.renk=renkArray[this.hafta.slice(6)];
         this.veriSatiri=this.tabloYaz();
     }
 
@@ -54,7 +55,7 @@ class Oyku{
         hafta.addEventListener('click', haftaSec);
         satir.appendChild(hafta);
         
-        satir.style.backgroundColor = this.renk;
+        // satir.style.backgroundColor = this.renk;
         return satir;
     }
 }
@@ -141,6 +142,7 @@ function TabloYaz(secilenOyku){
     document.getElementById(`sayiMetin`).textContent+=`Öykü Sayısı: `+sayac;
 
     onSon();
+    TabloBoya();
 
     function TabloSil(){
         for (oyku of Kutuphanem){
@@ -276,8 +278,41 @@ function oykuleriTabloyaEkle(){
         }
         listem.appendChild(oyku.veriSatiri);
     }
+    TabloBoya();
 }
 
+function TabloBoya(){
+    let renkIndis=0;
+    // const renkMatrisi=[`#ebf1f9`,`#d7d6ef`,`#c3d7ec`];
+
+    const satirlar= document.querySelectorAll(`tr`);
+    var myArray = [].slice.call(satirlar);
+    var elementsOnShow = myArray.filter(isVisible);
+    // console.log(elementsOnShow);
+    
+    function isVisible(element) {
+        return element.style.display!==`none`;
+    }
+
+    for (let i = 0; i < elementsOnShow.length; i++) {
+        // console.log(elementsOnShow[i]);
+        i%2===0 ?  elementsOnShow[i].classList.add(`cift`) : elementsOnShow[i].classList.add(`tek`);
+        if (i==0){
+            // elementsOnShow[i].style.backgroundColor=renkMatrisi[renkIndis%3];
+            elementsOnShow[i].classList.add(`renk${renkIndis}`);
+            elementsOnShow[i].renk=`renk${renkIndis}`;
+        }
+        else if (elementsOnShow[i-1].children[2].textContent === elementsOnShow[i].children[2].textContent){
+            elementsOnShow[i].classList.add(elementsOnShow[i-1].renk);
+            elementsOnShow[i].renk=(elementsOnShow[i-1].renk);
+        }
+        else{
+            renkIndis++;
+            elementsOnShow[i].classList.add(`renk${renkIndis%3+1}`);
+            elementsOnShow[i].renk=`renk${renkIndis%3+1}`;
+        }
+    }
+}
 // Baslangic=======
 let yeniOykulerinSayisi=YeniOykuler.length;
 

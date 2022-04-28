@@ -1,3 +1,9 @@
+:root {
+    --renk1: #ebf1f9;
+    --renk2: #d7d6ef;
+    --renk3: #c3d7ec;
+}
+
 *{
     box-sizing: border-box;
 }
@@ -71,17 +77,29 @@ table th:last-child{
     border-radius: 0 2vw 0 0;
 }
 
-tr:nth-child(even){
+.renk1{
+    background-color: var(--renk1);
+}
+
+.renk2{
+    background-color: var(--renk2);
+}
+.renk3{
+    background-color: var(--renk3);
+}
+
+tr.cift{
     filter: brightness(90%);
 }
 
- tr:nth-child(odd):hover{
+tr.tek:hover{
     filter: saturate(200%);
 }
 
-tr:nth-child(even):hover{
+tr.cift:hover{
     filter: saturate(200%) brightness(90%);
 }
+
 
 
 #container{
