@@ -2,6 +2,9 @@
     --renk1: #ebf1f9;
     --renk2: #d7d6ef;
     --renk3: #c3d7ec;
+    --renk1golge: #D0D5DC;
+    --renk2golge: #B9BAD0;
+    --renk3golge: #ADBED0;
 }
 
 *{
@@ -88,16 +91,46 @@ table th:last-child{
     background-color: var(--renk3);
 }
 
-tr.cift{
+.renk1.cift{
+    background-color: var(--renk1golge);
+}
+.renk2.cift{
+    background-color: var(--renk2golge);
+}
+.renk3.cift{
+    background-color: var(--renk3golge);
+}
+/* tr.cift{
     filter: brightness(90%);
+} */
+
+/* tr.renk1.tek:hover{
+    background-color: var(--renk1aydinlik);
+}
+tr.renk2.tek:hover{
+    background-color: var(--renk2aydinlik);
+}
+tr.renk3.tek:hover{
+    background-color: var(--renk3aydinlik);
 }
 
-tr.tek:hover{
+tr.renk1.cift:hover{
+    background-color: var(--renk1);
+}
+tr.renk2.cift:hover{
+    background-color: var(--renk2);
+}
+tr.renk3.cift:hover{
+    background-color: var(--renk3);
+} */
+
+
+.renk1:hover,.renk2:hover,.renk3:hover{
     filter: saturate(200%);
-}
-
-tr.cift:hover{
-    filter: saturate(200%) brightness(90%);
+    transform: scale(1.01);
+    transition: all .35s ease-in-out;
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px; */
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 
@@ -149,4 +182,13 @@ a:visited{
     #hepsiSec{
         order:9;
     }
+}
+
+@media (min-width:1000px) { 
+    td:first-child {  
+        max-inline-size: 50ch;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
 }

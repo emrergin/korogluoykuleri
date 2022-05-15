@@ -295,21 +295,37 @@ function TabloBoya(){
     }
 
     for (let i = 0; i < elementsOnShow.length; i++) {
-        // console.log(elementsOnShow[i]);
-        i%2===0 ?  elementsOnShow[i].classList.add(`cift`) : elementsOnShow[i].classList.add(`tek`);
-        if (i==0){
-            // elementsOnShow[i].style.backgroundColor=renkMatrisi[renkIndis%3];
-            elementsOnShow[i].classList.add(`renk${renkIndis}`);
-            elementsOnShow[i].renk=`renk${renkIndis}`;
-        }
-        else if (elementsOnShow[i-1].children[2].textContent === elementsOnShow[i].children[2].textContent){
-            elementsOnShow[i].classList.add(elementsOnShow[i-1].renk);
-            elementsOnShow[i].renk=(elementsOnShow[i-1].renk);
+        // console.log(elementsOnShow[i]);\
+        elementsOnShow[i].classList.remove(`cift`,`tek`,`renk1`,`renk2`,`renk3`);
+
+        if (autselect.value!==`tum` || weekselect.value!==`tum`){
+            if (i==0){
+                // elementsOnShow[i].style.backgroundColor=renkMatrisi[renkIndis%3];
+                elementsOnShow[i].classList.add(`renk${renkIndis}`);
+                elementsOnShow[i].renk=`renk${renkIndis}`;
+            }
+            else{
+                renkIndis++;
+                elementsOnShow[i].classList.add(`renk${renkIndis%3+1}`);
+                elementsOnShow[i].renk=`renk${renkIndis%3+1}`;
+            }
         }
         else{
-            renkIndis++;
-            elementsOnShow[i].classList.add(`renk${renkIndis%3+1}`);
-            elementsOnShow[i].renk=`renk${renkIndis%3+1}`;
+            i%2===0 ?  elementsOnShow[i].classList.add(`cift`) : elementsOnShow[i].classList.add(`tek`);
+            if (i==0){
+                // elementsOnShow[i].style.backgroundColor=renkMatrisi[renkIndis%3];
+                elementsOnShow[i].classList.add(`renk${renkIndis}`);
+                elementsOnShow[i].renk=`renk${renkIndis}`;
+            }
+            else if (elementsOnShow[i-1].children[2].textContent === elementsOnShow[i].children[2].textContent){
+                elementsOnShow[i].classList.add(elementsOnShow[i-1].renk);
+                elementsOnShow[i].renk=(elementsOnShow[i-1].renk);
+            }
+            else{
+                renkIndis++;
+                elementsOnShow[i].classList.add(`renk${renkIndis%3+1}`);
+                elementsOnShow[i].renk=`renk${renkIndis%3+1}`;
+            }
         }
     }
 }

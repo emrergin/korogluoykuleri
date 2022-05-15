@@ -13,6 +13,7 @@ I thank Hacer Noğman, a student of mine from the workshop, for constant suggest
 - For some reason, I was only able to use an inline listener for a table head. I should look into this.
 - I learned about brightness filter to make things darker. Just like my style.
 - There might be big performance costs, even with small projects like this, if a function is used inside a loop mistakenly.
+- Used CIELAB coloration for even numbered rows and hover effects, using: https://accessiblepalette.com/.
 
 ### Sources
 - Favicon: https://pixabay.com/images/id-2022464/
