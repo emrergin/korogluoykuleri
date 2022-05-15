@@ -131,13 +131,14 @@ tr{
 .renk1:hover,.renk2:hover,.renk3:hover{
     filter: saturate(200%);
     transform: scale(1.01) translateZ(0);
+    /* transform-origin: 0 0; */
     transition: all .35s ease-in-out;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
-/* .renk1:hover>td>*,.renk2:hover>td>*,.renk3:hover>td>*
+/* .renk1:hover>td>*,.renk2:hover>td>*,.renk3:hover>td>*,
 .renk1:hover>*,.renk2:hover>*,.renk3:hover>*{
-    transform: none !important;
+    display: inline-table;
 } */
 
 
