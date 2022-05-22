@@ -62,6 +62,7 @@ table{
 
 table td{
     padding: 1vw;
+    border-color: transparent;
 }
 
 
@@ -70,6 +71,7 @@ table th{
     background-color: #2c2c2c;
     color: #dcddde;
     font-size: 20px;
+    border-color: transparent;
 }
 
 table th:first-child{
@@ -102,9 +104,14 @@ table th:last-child{
 }
 
 tr:hover{
-    filter: saturate(200%);   
-    transition: all .35s ease-in-out;
+    filter: saturate(200%);  
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transition: all .35s ease-in-out;
+}
+
+tr:hover> :first-child{
+    border-left: transparent 8px solid;
+    transition: all .25s ease-in-out;
 }
 
 
@@ -159,7 +166,7 @@ a:visited{
 
 @media (min-width:1000px) { 
     td:first-child {  
-        max-inline-size: 50ch;
+        inline-size: 50ch;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
