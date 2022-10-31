@@ -1,5 +1,5 @@
 const https = require('https')
-const url = "https://atolye.herokuapp.com/api/haftaBilgisi";
+const url = "https://atolye.cyclic.app/api/haftaBilgisi";
 
 var Tarihler2021 = require('./yeniTarihlerYerel');
 
