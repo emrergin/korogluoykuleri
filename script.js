@@ -181,7 +181,6 @@ function hepsiSec(){
 }
 
 
-
 function siralamaDegistir(){
     Kutuphanem.sort(haftaSiraFonksiyonu);
     
@@ -276,7 +275,6 @@ function oykuleriTabloyaEkle(){
 
 function TabloBoya(){
     let renkIndis=0;
-    // const renkMatrisi=[`#ebf1f9`,`#d7d6ef`,`#c3d7ec`];
 
     const satirlar= document.querySelectorAll(`tr`);
     var myArray = [].slice.call(satirlar);
