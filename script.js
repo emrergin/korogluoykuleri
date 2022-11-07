@@ -336,4 +336,4 @@ EskiOykuler.map(a=>oykuEkle(a[2],a[1],a[0],a[3],true));
 oykuleriTabloyaEkle();
 onSon();
 dropDownOlustur();        
-        
+    //sonrasil
