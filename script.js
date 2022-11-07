@@ -8,8 +8,6 @@ const sonrakiDugme=document.getElementById(`sonraki`);
 const cekboks=document.getElementById("eskiOykuler");
 const cekboksCont=document.getElementById(`eskiOykuContainer`);
 
-  
-// let renkArray=[];
 let deg=-1;
 
 function oykuEkle(title, author, hafta, link,eskiMi){
@@ -25,10 +23,6 @@ class Oyku{
         this.hafta = hafta;
         this.link = link;
         this.eskiMi=eskiMi;
-        // if (renkArray[this.hafta.slice(6)]===undefined){
-        //     renkArray[this.hafta.slice(6)]=`rgb(${randomBetween(220,255)},${randomBetween(220,255)},${randomBetween(220,255)})`;
-        // }
-        // this.renk=renkArray[this.hafta.slice(6)];
         this.veriSatiri=this.tabloYaz();
     }
 
@@ -55,7 +49,6 @@ class Oyku{
         hafta.addEventListener('click', haftaSec);
         satir.appendChild(hafta);
         
-        // satir.style.backgroundColor = this.renk;
         return satir;
     }
 }
