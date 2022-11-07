@@ -281,14 +281,12 @@ function TabloBoya(){
     const satirlar= document.querySelectorAll(`tr`);
     var myArray = [].slice.call(satirlar);
     var elementsOnShow = myArray.filter(isVisible);
-    // console.log(elementsOnShow);
     
     function isVisible(element) {
         return element.style.display!==`none`;
     }
 
     for (let i = 0; i < elementsOnShow.length; i++) {
-        // console.log(elementsOnShow[i]);\
         elementsOnShow[i].classList.remove(`cift`,`tek`,`renk1`,`renk2`,`renk3`);
 
         if (autselect.value!==`tum` || weekselect.value!==`tum`){
