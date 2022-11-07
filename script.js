@@ -293,7 +293,6 @@ function TabloBoya(){
 
         if (autselect.value!==`tum` || weekselect.value!==`tum`){
             if (i==0){
-                // elementsOnShow[i].style.backgroundColor=renkMatrisi[renkIndis%3];
                 elementsOnShow[i].classList.add(`renk${renkIndis}`);
                 elementsOnShow[i].renk=`renk${renkIndis}`;
             }
