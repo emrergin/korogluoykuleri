@@ -306,7 +306,6 @@ function TabloBoya(){
         else{
             i%2===0 ?  elementsOnShow[i].classList.add(`cift`) : elementsOnShow[i].classList.add(`tek`);
             if (i==0){
-                // elementsOnShow[i].style.backgroundColor=renkMatrisi[renkIndis%3];
                 elementsOnShow[i].classList.add(`renk${renkIndis}`);
                 elementsOnShow[i].renk=`renk${renkIndis}`;
             }
