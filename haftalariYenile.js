@@ -12,13 +12,10 @@ https.get(url, res => {
     veri += data;
   });
   res.on("end", () => {
-    console.log(Tarihler2021.length)
     veri = JSON.parse(veri);
     veri.splice(veri.indexOf(`20.02.2022`),1);
-    console.log(veri.length)
-    Tarihler2021=veri.concat(Tarihler2021);
+    Tarihler2021=veri.reverse().concat(Tarihler2021);
     Tarihler2021=[...new Set(Tarihler2021)];
-    console.log(Tarihler2021.length)
 
     var file = fs.createWriteStream('yeniTarihler.js');
     var sep="";
