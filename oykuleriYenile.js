@@ -1,5 +1,5 @@
 const https = require('https')
-const url = "https://atolye.cyclic.app/api/oykulerKisa";
+const url = "https://kagitsizlar.vercel.app/api/oykulerKisa";
 
 var fs = require('fs');
 
