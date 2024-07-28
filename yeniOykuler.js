@@ -31,7 +31,7 @@ YeniOykuler=<!DOCTYPE html>
 			
 			<script>
 				{
-					__sveltekit_bdwom1 = {
+					__sveltekit_1ofrr78 = {
 						base: new URL("..", location).pathname.slice(0, -1)
 					};
 
@@ -40,8 +40,8 @@ YeniOykuler=<!DOCTYPE html>
 					const data = [{"type":"data","data":{user:null},"uses":{}},null];
 
 					Promise.all([
-						import("../_app/immutable/entry/start.gHMcu8Cj.js"),
-						import("../_app/immutable/entry/app.Cvrpsj8r.js")
+						import("../_app/immutable/entry/start.xwyHWylm.js"),
+						import("../_app/immutable/entry/app.XXYfOcIp.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 1],
