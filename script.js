@@ -10,14 +10,14 @@ const cekboksCont=document.getElementById(`eskiOykuContainer`);
 
 let deg=-1;
 
-function oykuEkle(title, author, hafta, link,eskiMi){
-    Kutuphanem.push(new Oyku(title, author, hafta, link,eskiMi));
+function oykuEkle(title, author, hafta, link,eskiMi){   
+    Kutuphanem.push(new Oyku(title, author, hafta, link,eskiMi));   
 }
 
 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
 class Oyku{
-    constructor(title, author, hafta, link,eskiMi){
+    constructor(title, author, hafta, link,eskiMi){           
         this.title = title;
         this.author = author;
         this.hafta = hafta;
@@ -59,7 +59,7 @@ function dropDownOlustur(){
     haftaList=[];
     yazarList=[];
 
-    for (oyku of Kutuphanem){
+    for (let oyku of Kutuphanem){
         haftaList.push(oyku.hafta.slice(6));
         if (cekboks.checked){
             yazarList.push(oyku.author);
@@ -263,13 +263,14 @@ function eskileriEkleCikar(val){
     TabloYaz();
 }
 
-function oykuleriTabloyaEkle(){
-    for (oyku of Kutuphanem){
+function oykuleriTabloyaEkle(){  
+    for (let oyku of Kutuphanem){
+        
         if (oyku.eskiMi && !cekboks.checked){
             oyku.veriSatiri.style.display=`none`;
         }
         listem.appendChild(oyku.veriSatiri);
-    }
+    }   
     TabloBoya();
 }
 
@@ -319,8 +320,7 @@ function TabloBoya(){
 // Baslangic=======
 let yeniOykulerinSayisi=YeniOykuler.length;
 
-YeniOykuler.map(a=>oykuEkle(a[2],a[1],a[0],a[3],false));
-
+YeniOykuler.forEach(a=>oykuEkle(a.baslik,a.yazar,"Hafta "+a.hafta,a.link,false));
 document.getElementById(`sayiMetin`).textContent=`Öykü Sayısı: `+yeniOykulerinSayisi;
 
 const tarihsizHaftaSayisi=[...new Set(Kutuphanem.map(item => item.hafta))].length-Tarihler2021.length;
@@ -331,7 +331,8 @@ for (let i = 0; i < tarihsizHaftaSayisi; i++){
     Tarihler2021.unshift(g2);
 }
 
-EskiOykuler.map(a=>oykuEkle(a[2],a[1],a[0],a[3],true));
+EskiOykuler.forEach(a=>oykuEkle(a[2],a[1],a[0],a[3],true));
+
 
 oykuleriTabloyaEkle();
 onSon();
